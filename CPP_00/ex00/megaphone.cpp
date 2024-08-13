@@ -6,15 +6,16 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 10:35:18 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/12 11:59:56 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/13 12:11:39 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <algorithm>
 
 int main( int argc, char *argv[])
 {
+    int j = 0;
+
     std::string str = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     if (argc == 1)
         std::cout << str;
@@ -23,9 +24,14 @@ int main( int argc, char *argv[])
         for (int i = 1; i < argc; i++)
         {
             str = argv[i];
-            std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+            j = 0;
+            while (str[j] != '\0')
+            {
+                str[j] = std::toupper(str[j]);
+                j++;
+            }
             std::cout << str;
         }
     }
-    return (EXIT_SUCCESS);
+    return (0);
 }

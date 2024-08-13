@@ -1,6 +1,7 @@
-NAME		= phonebook
+NAME		= test
 
-SRCS		= phonebook.cpp
+SRCS		= tests.cpp
+SRCS		+= Account.cpp
 
 OBJ_DIR     = objs/
 

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 14:01:00 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/14 18:20:46 by tviejo           ###   ########.fr       */
+/*   Created: 2024/08/14 19:20:09 by tviejo            #+#    #+#             */
+/*   Updated: 2024/08/14 19:31:31 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "HumanA.hpp"
+# include "Harl.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon)
+int main(int ac, char **av)
 {
-    this->name = name;
-}
+    Harl harl;
+    int i = 1;
 
-HumanA::~HumanA()
-{
-}
-
-void HumanA::attack(void)
-{
-    std::cout << this->name << " attacks with his " << this->weapon.getType() << std::endl;
+    while (i < ac)
+    {
+        harl.complain(av[i]);
+        i++;
+    }
+    return (0);
 }

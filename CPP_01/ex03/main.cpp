@@ -6,12 +6,13 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 14:01:10 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/14 14:48:19 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/14 18:15:21 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
+#include "Weapon.hpp"
 
 int main()
 {

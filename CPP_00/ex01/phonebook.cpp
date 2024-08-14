@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 12:06:32 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/13 13:27:27 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/14 12:17:58 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,16 @@ void PhoneBook::search_contact()
         std::cout << std::endl;
     }
     std::cout << "Enter the index of the contact you want to display: ";
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cin >> index;
     if (std::cin.eof())
         return;
     while (index < 0 || index >= this->nb_contacts)
     {
         std::cout << "Invalid input. Please enter a number between 0 and " << this->nb_contacts - 1 << ": ";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cin >> index;
         if (std::cin.eof())
             return;

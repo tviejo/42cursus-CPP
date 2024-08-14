@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 10:35:18 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/13 12:11:39 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/14 11:52:34 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int main( int argc, char *argv[])
             std::cout << str;
         }
     }
+    std::cout << std::endl;
     return (0);
 }

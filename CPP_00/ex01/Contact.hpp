@@ -6,12 +6,16 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 12:18:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/13 13:33:25 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/14 12:40:53 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <stdint.h>
+# include <string>
+# include <limits>
+#include <iomanip>
+
 
 class Contact {
     private:

@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 11:59:09 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/13 18:51:05 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/14 12:55:21 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,22 +63,32 @@ void    Contact::create_contact()
     std::string darkest_secret;
 
     std::cout << "First name: ";
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cin >> first_name;
     if (std::cin.eof())
         return;
     std::cout << "Last name: ";
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cin >> last_name;
     if (std::cin.eof())
         return;
     std::cout << "Nickname: ";
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cin >> nickname;
     if (std::cin.eof())
         return;
     std::cout << "Phone number: ";
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cin >> phone_number;
     while (is_valid_phone_number(phone_number) == false)
     {
         std::cout << "Invalid phone number. Please enter a 10 digit phone number: ";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cin >> phone_number;
         if (std::cin.eof())
             return;
@@ -110,32 +120,14 @@ void    Contact::display_contact_header()
 {
     if (first_name.length() > 10)
         std::cout << first_name.substr(0, 9) << "." << "|";
-    else if (first_name.length() < 10)
-    {
-        for (uint64_t i = 0; i < 10 - first_name.length(); i++)
-            std::cout << " ";
-        std::cout << first_name << "|";
-    }
     else
-        std::cout << first_name << "|";
+        std::cout << std::setw(10) << std::setfill(' ') << first_name << "|";
     if (last_name.length() > 10)
         std::cout << last_name.substr(0, 9) << "." << "|";
-    else if (last_name.length() < 10)
-    {
-        for (uint64_t i = 0; i < 10 - last_name.length(); i++)
-            std::cout << " ";
-        std::cout << last_name << "|";
-    }
     else
-        std::cout << last_name << "|";
+        std::cout << std::setw(10) << std::setfill(' ') << last_name << "|";
     if (nickname.length() > 10)
         std::cout << nickname.substr(0, 9) << "." << "|";
-    else if (nickname.length() < 10)
-    {
-        for (uint64_t i = 0; i < 10 - nickname.length(); i++)
-            std::cout << " ";
-        std::cout << nickname << "|";
-    }
     else
-        std::cout << nickname << "|";
+        std::cout << std::setw(10) << std::setfill(' ') << nickname << "|";
 }

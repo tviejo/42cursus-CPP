@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 14:01:13 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/14 18:16:49 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/16 10:57:31 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ std::string Weapon::getType(void)
 
 void Weapon::setType(std::string type)
 {
+	std::cout << "set weapon of type: " << type << std::endl;
 	this->type = type;
 }
 

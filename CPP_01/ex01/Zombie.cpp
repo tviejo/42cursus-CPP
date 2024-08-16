@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 22:19:32 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/13 22:28:56 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/16 10:46:11 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void Zombie::announce(void)
 
 Zombie::Zombie(std::string name)
 {
+    std::cout << this->name << ": constructor called" << std::endl;
     this->name = name;
 }
 

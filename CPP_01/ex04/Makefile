@@ -1,6 +1,7 @@
 NAME		=   replace
 
 SRCS	    =   main.cpp
+
 OBJ_DIR     = objs/
 
 OBJS		=	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS))

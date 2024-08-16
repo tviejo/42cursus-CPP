@@ -6,12 +6,24 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 18:32:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/14 18:51:32 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/16 11:18:52 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
 # include <fstream>
+
+std::string replace(std::string infile, std::string research, std::string replace)
+{
+    size_t pos = 0;
+    while ((pos = infile.find(research, pos)) != std::string::npos)
+    {
+        infile.erase(pos, research.length());
+        infile.insert(pos, replace);
+        pos += replace.length();
+    }
+    return (infile);
+}
 
 int main(int argc, char **argv)
 {
@@ -36,19 +48,16 @@ int main(int argc, char **argv)
     new_file.open(new_filename.c_str());
     if (!new_file.is_open())
     {
+        file.close();
         std::cout << "Error: could not create new file" << std::endl;
         return (1);
     }
-    while (file.good())
+    while (std::getline(file, line))
     {
-        std::getline(file, line);
-        size_t pos = 0;
-        while ((pos = line.find(s1, pos)) != std::string::npos)
-        {
-            line.erase(pos, s1.length());
-            line.insert(pos, s2);
-            pos += s2.length();
-        }
+        line = replace(line, s1, s2);
         new_file << line << std::endl;
     }
+    file.close();
+    new_file.close();
+    return (0);
 }

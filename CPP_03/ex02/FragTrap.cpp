@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 20:33:23 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/15 10:16:31 by tviejo           ###   ########.fr       */
+/*   Created: 2024/08/15 17:09:15 by tviejo            #+#    #+#             */
+/*   Updated: 2024/08/15 17:26:35 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+# include "FragTrap.hpp"
 
-int main( void ) {
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
-return 0;
+FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30)
+{
+    std::cout << "FragTrap " << ClapTrap::get_name() << " is ready to fight!" << std::endl;
+}
+
+void FragTrap::highFivesGuys()
+{
+    std::cout << "FragTrap " << ClapTrap::get_name() << " want at high five" << std::endl;
 }

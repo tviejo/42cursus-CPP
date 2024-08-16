@@ -5,23 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 20:33:23 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/15 10:16:31 by tviejo           ###   ########.fr       */
+/*   Created: 2024/08/15 14:35:33 by tviejo            #+#    #+#             */
+/*   Updated: 2024/08/15 15:01:10 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+# include "ClapTrap.hpp"
 
-int main( void ) {
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
-return 0;
+int main(void)
+{
+    ClapTrap soldier( "soldier", 10, 5, 1);  //name, hitpoint, energypoint, attackdamage
+    ClapTrap soldier2( "soldier2", 10, 2, 5);  //name, hitpoint, energypoint, attackdamage
+    soldier.attack("enemy");
+    soldier.takeDamage(5);
+    soldier.beRepaired(5);
+    soldier.takeDamage(10);
+    soldier.beRepaired(5);
+
+    soldier2.attack("enemy");
+    soldier2.attack("enemy");
+    soldier2.attack("enemy");
 }

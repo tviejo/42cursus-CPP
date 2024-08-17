@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 13:59:53 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/15 15:01:47 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/17 21:32:39 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,24 @@ ClapTrap::ClapTrap()
     hitpoints = 10;
     energypoints = 10;
     attackdamage = 0;
+    std::cout << "Constructor called for: " << name << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string _name)
+{
+    name = _name;
+    hitpoints = 10;
+    energypoints = 10;
+    attackdamage = 0;
+    std::cout << "Constructor called for: " << name << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &copy)
+{
+    name = copy.get_name();
+    attackdamage = copy.get_attackdamage();
+    hitpoints = copy.get_hitpoints();
+    energypoints = copy.get_energypoints();
     std::cout << "Constructor called for: " << name << std::endl;
 }
 
@@ -105,4 +123,9 @@ void ClapTrap::attack(const std::string& target)
     std::cout << "Claptrap " << this->name << " attack " << target;
     std::cout << ", causing " << this->attackdamage << " points of damage!" << std::endl;
     
+}
+
+void ClapTrap::set_name(std::string _name)
+{
+    name = _name;
 }

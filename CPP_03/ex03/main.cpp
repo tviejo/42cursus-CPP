@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 14:35:33 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/17 21:37:38 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/19 15:44:31 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int main(void)
     std::cout << std::endl;
     diamond_soldier.attack("enemy");
     diamond_soldier.highFivesGuys();
+    diamond_soldier.guardGate();
     diamond_soldier.whoAmI();
 
     std::cout << std::endl << std::endl;

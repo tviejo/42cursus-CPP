@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 21:08:18 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/17 21:26:35 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/19 15:40:48 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,9 @@ void DiamondTrap::whoAmI()
 DiamondTrap::~DiamondTrap()
 {
     std::cout << "DiamondTrap " << ClapTrap::get_name() << " is dead" << std::endl;
+}
+
+void DiamondTrap::attack(const std::string &target)
+{
+    ScavTrap::attack(target);
 }

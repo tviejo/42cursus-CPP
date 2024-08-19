@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 16:35:40 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/17 21:35:10 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/19 15:38:21 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,9 @@ ScavTrap::ScavTrap()
     this->energypoints = 50;
     this->attackdamage = 20;
     std::cout << "ScavTrap " << ClapTrap::get_name() << " is ready to fight!" << std::endl;
+}
+
+void ScavTrap::attack(const std::string &target)
+{
+    std::cout << "ScavTrap " << ClapTrap::get_name() << " attack " << target << " causing " << this->attackdamage << " points of damage!" << std::endl;
 }

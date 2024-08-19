@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 17:09:15 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/17 21:34:14 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/19 15:40:03 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,9 @@ FragTrap::FragTrap()
     this->energypoints = 100;
     this->attackdamage = 30;
     std::cout << "FragTrap " << ClapTrap::get_name() << " is ready to fight!" << std::endl;
+}
+
+void FragTrap::attack(const std::string &target)
+{
+    std::cout << "FragTrap " << ClapTrap::get_name() << " attack " << target << ", causing " << this->attackdamage << " points of damage!" << std::endl;
 }

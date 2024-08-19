@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 21:08:20 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/17 21:15:54 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/19 15:41:13 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
         DiamondTrap &operator=(const DiamondTrap &copy);
         ~DiamondTrap();
         void whoAmI();
+        void attack(const std::string &target);
 };
 
 #endif

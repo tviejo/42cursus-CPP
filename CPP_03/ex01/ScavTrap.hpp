@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 16:35:37 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/17 21:15:11 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/19 15:33:12 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ScavTrap : virtual public ClapTrap
         ScavTrap &operator=(const ScavTrap &copy);
         ~ScavTrap();
         void guardGate();
+        void attack(const std::string &target);
 };
 
 #endif

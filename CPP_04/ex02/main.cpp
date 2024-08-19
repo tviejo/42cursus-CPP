@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 19:56:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/15 22:32:44 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/17 21:48:23 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int main()
 const Animal* j = new Dog();
 const Animal* i = new Cat();
 
-// const Animal* meta = new Animal();
-// meta->makeSound();
-// delete meta;
+//  const Animal* meta = new Animal();
+//  meta->makeSound();
+//  delete meta;
 
 j->makeSound();
 i->makeSound();

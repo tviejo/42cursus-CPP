@@ -4,8 +4,6 @@ SRCS	    =   main.cpp
 SRCS		+=  animal.cpp
 SRCS		+=  dog.cpp
 SRCS		+=  cat.cpp
-SRCS		+=  wronganimal.cpp
-SRCS		+=  wrongcat.cpp
 
 OBJ_DIR     = objs/
 

@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 12:52:16 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/20 22:06:20 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/21 14:23:40 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,15 @@
 # include "ICharacter.hpp"
 
 class ICharacter;
-
 class AMateria
 {
     protected:
         AMateria();
         AMateria(const AMateria &copy);
         AMateria &operator=(const AMateria &copy);
-        ~AMateria();
-    private:
         std::string type;
     public:
+        virtual ~AMateria();
         AMateria(std::string const & type);
         std::string const & getType() const;
 

@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 21:50:30 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/15 21:58:31 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/21 14:20:08 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 Brain::Brain()
 {
+    std::cout << "Default Brain constructor called" << std::endl;
     for (int i = 0; i < 100; i++)
         ideas[i] = "";
 }
 
 Brain::Brain(std::string idea)
 {
+    std::cout << "Parametric Brain constructor called" << std::endl;
     for (int i = 0; i < 100; i++)
         ideas[i] = idea;
 }
 
 Brain::~Brain()
 {
+    std::cout << "Default Brain destructor called" << std::endl;
 }
 
 Brain::Brain(const Brain &copy)

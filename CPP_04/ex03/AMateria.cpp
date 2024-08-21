@@ -6,16 +6,11 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 12:53:33 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/20 22:05:45 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/21 12:52:56 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "AMateria.hpp"
-
-AMateria::AMateria()
-{
-    std::cout << "Default AMateria constructor called" << std::endl;
-}
 
 AMateria::~AMateria()
 {
@@ -25,6 +20,8 @@ AMateria::~AMateria()
 AMateria &AMateria::operator=(const AMateria &copy)
 {
     std::cout << "Copy assignment operator AMateria called" << std::endl;
+    if (this != &copy)
+        this->type = copy.type;
     return (*this);
 }
 
@@ -49,10 +46,3 @@ void AMateria::use(ICharacter& target)
 {
     (void)target;
 }
-
-AMateria* AMateria::clone() const
-{
-    return (new AMateria(*this));
-}
-
-

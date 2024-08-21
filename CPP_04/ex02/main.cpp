@@ -6,15 +6,13 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 19:56:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/17 21:48:23 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/21 14:19:42 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "dog.hpp"
 # include "cat.hpp"
 # include "animal.hpp"
-# include "wrongcat.hpp"
-# include "wronganimal.hpp"
 
 
 int main()

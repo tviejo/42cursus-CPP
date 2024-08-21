@@ -1,6 +1,12 @@
-NAME		=   Animal
+NAME		=   Interface
 
 SRCS	    =   main.cpp
+SRCS		+=  AMateria.cpp
+SRCS		+=  Character.cpp
+SRCS		+=  Cure.cpp
+SRCS		+=  Ice.cpp
+SRCS		+=  MateriaSource.cpp
+
 
 OBJ_DIR     = objs/
 
@@ -8,7 +14,7 @@ OBJS		=	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS))
 
 CC			= c++
 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g3
 
 all: $(NAME)
 

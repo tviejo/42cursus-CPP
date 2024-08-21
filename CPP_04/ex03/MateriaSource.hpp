@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wronganimal.hpp                                    :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/15 19:43:02 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/15 21:13:52 by tviejo           ###   ########.fr       */
+/*   Created: 2024/08/21 10:52:36 by tviejo            #+#    #+#             */
+/*   Updated: 2024/08/21 12:54:51 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_H
-# define WRONGANIMAL_H
+#ifndef MATERIASOURCE_H
+# define MATERIASOURCE_H
 
 # include <string>
 # include <iostream>
+# include "IMateriaSource.hpp"
 
-class WrongAnimal
+class MateriaSource : public IMateriaSource
 {
-    protected:
-        std::string type;
     private:
+        AMateria *inventory[4];
     public:
-        WrongAnimal();
-        WrongAnimal(std::string type);
-        virtual ~WrongAnimal();
-        WrongAnimal(const WrongAnimal &copy);
-        WrongAnimal &operator=(const WrongAnimal &copy);
-        std::string getType() const;
-        void makeSound() const;
+        MateriaSource();
+        MateriaSource(const MateriaSource &copy);
+        MateriaSource &operator=(const MateriaSource &copy);
+        ~MateriaSource();
+        void learnMateria(AMateria* m);
+        AMateria* createMateria(std::string const & type);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 22:10:31 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/21 12:43:50 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/22 11:58:08 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ Ice &Ice::operator=(const Ice &copy)
     if (this != &copy)
         this->type = copy.type;
     return (*this);
+}
+
+Ice::Ice(std::string const & type) : AMateria(type)
+{
+    std::cout << "Parametric Ice constructor called" << std::endl;
 }
 
 Ice::Ice(const Ice &copy) : AMateria(copy)

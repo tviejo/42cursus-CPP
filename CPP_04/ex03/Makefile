@@ -6,6 +6,7 @@ SRCS		+=  Character.cpp
 SRCS		+=  Cure.cpp
 SRCS		+=  Ice.cpp
 SRCS		+=  MateriaSource.cpp
+SRCS		+=  GarbageCollector.cpp
 
 
 OBJ_DIR     = objs/

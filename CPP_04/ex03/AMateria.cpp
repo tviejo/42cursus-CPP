@@ -6,11 +6,16 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 12:53:33 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/21 12:52:56 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/22 11:57:01 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "AMateria.hpp"
+
+AMateria::AMateria()
+{
+    std::cout << "Default AMateria constructor called" << std::endl;
+}
 
 AMateria::~AMateria()
 {

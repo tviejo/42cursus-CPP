@@ -6,13 +6,15 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 19:56:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/21 13:58:27 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/22 10:35:40 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "dog.hpp"
 # include "cat.hpp"
 # include "animal.hpp"
+# include "wrongcat.hpp"
+# include "wronganimal.hpp"
 
 
 int main()
@@ -29,6 +31,15 @@ j->makeSound(); //will output the cat sound!
 i->makeSound();
 meta->makeSound();
 
+const Animal* x = new Cat();
+{
+    const Animal* z(x);
+    std::cout << "copy making sound" << std::endl;
+    z->makeSound();
+}
+std::cout << "original making sound" << std::endl;
+x->makeSound();
+
 std::cout << std::endl << std::endl;
 
 const Animal* copymeta = meta;
@@ -41,10 +52,14 @@ copyi->makeSound();
 copymeta->makeSound();
 std::cout << std::endl << std::endl;
 
+const WrongAnimal* w = new WrongCat();
+w->makeSound();
+
 std::cout << std::endl << std::endl;
 delete copymeta;
 delete copyj;
 delete copyi;
+delete w;
 
 return 0;
 }

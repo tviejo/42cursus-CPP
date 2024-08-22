@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 19:56:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/21 14:34:44 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/22 12:35:01 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int main()
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
-    // me->unequip(0);
-    // me->use(0, *bob);
+    me->unequip(0);
+    me->use(0, *bob);
     delete bob;
     delete me;
     delete src;

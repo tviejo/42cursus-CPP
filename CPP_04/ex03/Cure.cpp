@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 22:09:59 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/21 12:50:33 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/22 11:57:46 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ Cure &Cure::operator=(const Cure &copy)
     if (this != &copy)
         this->type = copy.type;
     return (*this);
+}
+
+Cure::Cure(std::string const & type) : AMateria(type)
+{
+    std::cout << "Parametric Cure constructor called" << std::endl;
 }
 
 Cure::Cure(const Cure &copy) : AMateria(copy)

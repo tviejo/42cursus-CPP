@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 10:39:58 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/21 14:25:45 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/22 11:54:59 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void Character::unequip(int idx)
 {
     if (this->inventory[idx])
     {
-        delete this->inventory[idx];
+        GarbageCollector::collectGarbage(this->inventory[idx]);
         this->inventory[idx] = NULL;
     }
 }

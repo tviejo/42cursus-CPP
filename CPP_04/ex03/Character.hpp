@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 10:39:51 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/21 11:49:06 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/22 11:28:46 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include "GarbageCollector.hpp"
 #include <iostream>
 
-class Character : public ICharacter
+class Character : public ICharacter, public GarbageCollector
 {
     private:
         std::string name;

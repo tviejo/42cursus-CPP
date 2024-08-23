@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:53:27 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/22 12:36:53 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/23 09:39:44 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define GARBAGECOLECTOR_HPP
 
 # include "AMateria.hpp"
+# include "ChainedList.hpp"
 # include <iostream>
 # include <vector>
 
@@ -25,7 +26,7 @@ class GarbageCollector
         GarbageCollector &operator=(const GarbageCollector &copy);
         ~GarbageCollector();
     private:
-        std::vector<void *> garbage;
+        Node *head;
     public:
         void collectGarbage(void *ptr);
         void freeGarbage();

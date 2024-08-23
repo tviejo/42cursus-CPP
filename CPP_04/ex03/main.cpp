@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 19:56:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/22 12:35:01 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/23 09:59:37 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int main()
     me->use(1, *bob);
     me->unequip(0);
     me->use(0, *bob);
+    me->unequip(1);
+    me->use(1, *bob);
     delete bob;
     delete me;
     delete src;

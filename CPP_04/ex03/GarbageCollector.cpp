@@ -6,24 +6,34 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:55:59 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/22 12:36:26 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/23 09:38:13 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "GarbageCollector.hpp"
 
-GarbageCollector::GarbageCollector()
+GarbageCollector::GarbageCollector() : head(NULL)
 {
 }
 
-GarbageCollector::GarbageCollector(const GarbageCollector &copy)
+GarbageCollector::GarbageCollector(const GarbageCollector &copy) : head(NULL)
 {
-    this->garbage = copy.garbage;
+    Node *current = copy.head;
+    while (current) {
+        collectGarbage(current->ptr);
+        current = current->next;
+    }
 }
 
-GarbageCollector & GarbageCollector::operator=(const GarbageCollector &copy)
-{
-    this->garbage = copy.garbage;
+GarbageCollector &GarbageCollector::operator=(const GarbageCollector &copy) {
+    if (this != &copy) {
+        freeGarbage();
+        Node *current = copy.head;
+        while (current) {
+            collectGarbage(current->ptr);
+            current = current->next;
+        }
+    }
     return *this;
 }
 
@@ -34,14 +44,19 @@ GarbageCollector::~GarbageCollector()
 
 void GarbageCollector::collectGarbage(void *ptr)
 {
-    garbage.push_back(ptr);
+    Node *newNode = new Node(ptr);
+    newNode->next = head;
+    head = newNode;
 }
 
 void GarbageCollector::freeGarbage()
 {
-    for (size_t i = 0; i < garbage.size(); ++i)
-    {
-        delete static_cast<AMateria*>(garbage[i]);
+    Node *current = head;
+    while (current) {
+        Node *next = current->next;
+        delete static_cast<AMateria*>(current->ptr);
+        delete current;
+        current = next;
     }
-    garbage.clear();
+    head = NULL;
 }

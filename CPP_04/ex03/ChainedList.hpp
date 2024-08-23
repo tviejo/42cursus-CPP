@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dog.hpp                                            :+:      :+:    :+:   */
+/*   ChainedList.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/15 19:55:50 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/23 09:54:43 by tviejo           ###   ########.fr       */
+/*   Created: 2024/08/23 09:38:47 by tviejo            #+#    #+#             */
+/*   Updated: 2024/08/23 09:39:36 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-# define DOG_H
+#ifndef CHAINEDLIST_HPP
+# define CHAINEDLIST_HPP
 
-# include "animal.hpp"
-# include "brain.hpp"
+# include <string>
 
-class Dog : public Animal
+struct Node
 {
-    private:
-        Brain *brain;
-    public:
-        Dog();
-        ~Dog();
-        Dog(const Dog &copy);
-        Dog &operator=(const Dog &value);
-        void makeSound() const;
+            void *ptr;
+            Node *next;
+            Node(void *ptr) : ptr(ptr), next(NULL) {}
 };
 
 #endif

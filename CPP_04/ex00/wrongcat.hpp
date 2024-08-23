@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wrong_cat.hpp                                      :+:      :+:    :+:   */
+/*   wrongcat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 19:49:10 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/15 21:01:19 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/23 13:13:08 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class WrongCat : public WrongAnimal
         WrongCat();
         ~WrongCat();
         WrongCat &operator=(const WrongCat &value);
+        WrongCat(const WrongCat &copy);
         void makeSound() const;
 };
 

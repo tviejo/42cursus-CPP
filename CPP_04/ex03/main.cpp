@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 19:56:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/23 09:59:37 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/23 13:44:29 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,17 @@ int main()
     me->equip(tmp);
     tmp = src->createMateria("Cure");
     me->equip(tmp);
+    me->equip(tmp);
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
+    me->use(4, *bob);
     me->unequip(0);
     me->use(0, *bob);
     me->unequip(1);
     me->use(1, *bob);
+    me->unequip(1);
+    me->unequip(4);
     delete bob;
     delete me;
     delete src;

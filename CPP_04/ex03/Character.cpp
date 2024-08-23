@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 10:39:58 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/22 11:54:59 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/23 13:46:51 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ Character::Character(std::string name)
 
 void Character::use(int idx, ICharacter& target)
 {
+    if (idx < 0 || idx > 3)
+    {
+        std::cout << "Invalid index" << std::endl;
+        return ;
+    }
     if (this->inventory[idx])
         this->inventory[idx]->use(target);
     else 
@@ -66,7 +71,16 @@ void Character::equip(AMateria* m)
     {
         if (!this->inventory[i])
         {
+            for (int j = 0; j < 4; j++)
+            {
+                if (this->inventory[j] == m)
+                {
+                    std::cout << "Materia already equipped" << std::endl;
+                    return ;
+                }
+            }
             this->inventory[i] = m;
+            std::cout << "Materia equipped" << std::endl;
             return ;
         }
     }
@@ -74,9 +88,15 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
+    if (idx < 0 || idx > 3)
+    {
+        std::cout << "Invalid index" << std::endl;
+        return ;
+    }
     if (this->inventory[idx])
     {
         GarbageCollector::collectGarbage(this->inventory[idx]);
+        std::cout << "Materia unequipped" << std::endl;
         this->inventory[idx] = NULL;
     }
 }

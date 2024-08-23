@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 19:56:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/23 09:48:39 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/23 13:53:03 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,43 +17,41 @@
 
 int main()
 {
-const Animal* j = new Dog();
-const Animal* i = new Cat();
 
-//  const Animal* meta = new Animal();
-//  meta->makeSound();
-//  delete meta;
+    //  const Animal* meta = new Animal();
+    //  meta->makeSound();
+    //  delete meta;
 
-const Animal* x = new Cat();
-{
-    const Animal* z(x);
-    std::cout << "copy making sound" << std::endl;
-    z->makeSound();
-}
-std::cout << "original making sound" << std::endl;
-x->makeSound();
+    Animal *animal[10];
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << "---------" << i << "----------" << std::endl;
+        if (i % 2 == 0)
+            animal[i] = new Dog();
+        else
+            animal[i] = new Cat();
+        std::cout << "---------------------" << std::endl;
+        animal[i]->makeSound();
+        std::cout << std::endl;
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        std::cout << "---------" << i << "----------" << std::endl;
+        delete animal[i];
+        std::cout << std::endl;
+    }
 
-j->makeSound();
-i->makeSound();
+    std::cout << std::endl << "test deep copy" << std::endl;
 
-const Animal* copyj = j;
-const Animal* copyi = i;
-copyi->makeSound();
-copyj->makeSound();
-
-Dog basic;
-{
-    Dog tmp = basic;
-}
-basic.makeSound();
-
-Dog basic_2;
-{
-    Dog tmp(basic_2);
-}
-basic.makeSound();
-
-delete copyj;
-delete copyi;
-delete x;
+    const Animal* x = new Cat();
+    {
+        const Animal* z(x);
+        z->makeSound();
+        const Animal* y = x;
+        y->makeSound();
+    }
+    x->makeSound();
+    std::cout << std::endl << std::endl;
+    delete x;
+    return 0;
 }

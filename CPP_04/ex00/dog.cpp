@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 19:55:10 by tviejo            #+#    #+#             */
-/*   Updated: 2024/08/23 13:12:40 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/08/23 13:59:18 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ Dog::Dog() : Animal::Animal("Dog")
 
 void Dog::makeSound() const
 {
-	std::cout << "Dog constructor called" << std::endl;
     std::cout << "Woof" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 10:38:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 16:37:43 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/24 16:39:17 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ std::string Bureaucrat::getName() const
     return (this->name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return (this->grade);
 }
@@ -88,7 +88,7 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat& Bureaucrat)
     return (out);
 }
 
-void    Bureaucrat::signForm(Form &form)
+void    Bureaucrat::signForm(Aform &form)
 {
     try
     {
@@ -98,5 +98,18 @@ void    Bureaucrat::signForm(Form &form)
     catch(const std::exception& e)
     {
         std::cout << this->name << " couldn't sign " << form.get_name() << " because " << e.what() << std::endl;
+    }
+}
+
+void    Bureaucrat::executeForm(Aform const & form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->name << " executed " << form.get_name() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
     }
 }

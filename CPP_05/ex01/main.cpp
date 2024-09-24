@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:20:46 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 13:41:49 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/24 16:37:22 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ int main(void)
         std::cout << b1 << std::endl;
         Form f3("f3", 150, 150, false);
         std::cout << f3 << std::endl;
-        f3.beSigned(b1);
-        b1.signForm(f3.get_name(), "reason", f3.get_is_signed());
+        b1.signForm(f3);
         std::cout << f3 << std::endl;
     }
     catch(const std::exception& e)
@@ -60,8 +59,7 @@ int main(void)
     std::cout << f4 << std::endl;
     try
     {
-        f4.beSigned(b2);
-        b2.signForm(f4.get_name(), "reason", f4.get_is_signed());
+        b2.signForm(f4);
         std::cout << f4 << std::endl;
     } 
     catch(const std::exception& e)

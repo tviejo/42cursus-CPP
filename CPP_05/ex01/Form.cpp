@@ -6,11 +6,12 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:44:10 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 13:03:28 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/24 16:36:11 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Form.hpp"
+# include "Bureaucrat.hpp" 
 
 Form::Form() : name("default"), sign_grade(0), exec_grade(0)
 {

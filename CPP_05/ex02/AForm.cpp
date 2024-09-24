@@ -19,23 +19,23 @@ Aform::Aform() : name("default"), sign_grade(0), exec_grade(0)
     std::cout << "default Constructor Called" << std::endl;
 }
 
-Aform::Aform(int sign_grade, int exec_grade, bool is_signed) : name("default"), sign_grade(sign_grade), exec_grade(exec_grade)
+Aform::Aform(int sign_grade, int exec_grade) : name("default"), sign_grade(sign_grade), exec_grade(exec_grade)
 {
     if (sign_grade < 0 || exec_grade < 0)
         throw Aform::GradeTooLowException();
     else if (sign_grade > 150 || exec_grade > 150)
         throw Aform::GradeTooHighException();
-    this->is_signed = is_signed;
+    this->is_signed = false;
     std::cout << "default Constructor Called" << std::endl;
 }
 
-Aform::Aform(std::string name, int sign_grade, int exec_grade, bool is_signed) : name(name), sign_grade(sign_grade), exec_grade(exec_grade)
+Aform::Aform(std::string name, int sign_grade, int exec_grade) : name(name), sign_grade(sign_grade), exec_grade(exec_grade)
 {
     if (sign_grade < 0 || exec_grade < 0)
         throw Aform::GradeTooLowException();
     else if (sign_grade > 150 || exec_grade > 150)
         throw Aform::GradeTooHighException();
-    this->is_signed = is_signed;
+    this->is_signed = false;
     std::cout << "default Constructor Called" << std::endl;
 }
 

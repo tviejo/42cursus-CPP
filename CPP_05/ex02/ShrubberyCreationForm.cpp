@@ -6,18 +6,18 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:58:35 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 15:01:02 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/24 17:52:14 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Aform("ShrubberyCreationForm", 145, 137, false), target("default")
+ShrubberyCreationForm::ShrubberyCreationForm() : Aform("ShrubberyCreationForm", 145, 137), target("default")
 {
     std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Aform("ShrubberyCreationForm", 145, 137, false), target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Aform("ShrubberyCreationForm", 145, 137), target(target)
 {
     std::cout << "ShrubberyCreationForm target constructor called" << std::endl;
 }

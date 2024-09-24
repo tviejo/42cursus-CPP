@@ -32,8 +32,8 @@ class Aform
     public:
         virtual ~Aform();
         Aform();
-        Aform(int sign_grade, int exec_grade, bool is_signed);
-        Aform(std::string name, int sign_grade, int exec_grade, bool is_signed);
+        Aform(int sign_grade, int exec_grade);
+        Aform(std::string name, int sign_grade, int exec_grade);
         Aform(const Aform &copy);
         Aform &operator=(const Aform &copy);
         std::string get_name() const;

@@ -6,18 +6,18 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:58:35 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 15:32:46 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/24 17:51:55 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Aform("PresidentialPardonForm", 25, 5, false), target("default")
+PresidentialPardonForm::PresidentialPardonForm() : Aform("PresidentialPardonForm", 25, 5), target("default")
 {
     std::cout << "RobotomyRequestForm default constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : Aform("PresidentialPardonForm", 25, 5, false), target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Aform("PresidentialPardonForm", 25, 5), target(target)
 {
     std::cout << "PresidentialPardonForm target constructor called" << std::endl;
 }

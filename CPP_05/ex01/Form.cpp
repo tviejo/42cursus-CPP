@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:44:10 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 16:36:11 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/24 17:53:12 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,23 @@ Form::Form() : name("default"), sign_grade(0), exec_grade(0)
     std::cout << "default Constructor Called" << std::endl;
 }
 
-Form::Form(int sign_grade, int exec_grade, bool is_signed) : name("default"), sign_grade(sign_grade), exec_grade(exec_grade)
+Form::Form(int sign_grade, int exec_grade) : name("default"), sign_grade(sign_grade), exec_grade(exec_grade)
 {
     if (sign_grade < 0 || exec_grade < 0)
         throw Form::GradeTooLowException();
     else if (sign_grade > 150 || exec_grade > 150)
         throw Form::GradeTooHighException();
-    this->is_signed = is_signed;
+    this->is_signed = false;
     std::cout << "default Constructor Called" << std::endl;
 }
 
-Form::Form(std::string name, int sign_grade, int exec_grade, bool is_signed) : name(name), sign_grade(sign_grade), exec_grade(exec_grade)
+Form::Form(std::string name, int sign_grade, int exec_grade) : name(name), sign_grade(sign_grade), exec_grade(exec_grade)
 {
     if (sign_grade < 0 || exec_grade < 0)
         throw Form::GradeTooLowException();
     else if (sign_grade > 150 || exec_grade > 150)
         throw Form::GradeTooHighException();
-    this->is_signed = is_signed;
+    this->is_signed = false;
     std::cout << "default Constructor Called" << std::endl;
 }
 

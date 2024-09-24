@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:44:04 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 16:35:59 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/24 17:53:36 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Form
     public:
         ~Form();
         Form();
-        Form(int sign_grade, int exec_grade, bool is_signed);
-        Form(std::string name, int sign_grade, int exec_grade, bool is_signed);
+        Form(int sign_grade, int exec_grade);
+        Form(std::string name, int sign_grade, int exec_grade);
         Form(const Form &copy);
         Form &operator=(const Form &copy);
         std::string get_name() const;

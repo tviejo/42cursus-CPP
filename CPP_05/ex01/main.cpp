@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:20:46 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 16:37:22 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/24 17:53:27 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
     std::cout << "Test Form with 160 grade" << std::endl;
     try
     {
-        Form f1("f1", 160, 160, false);
+        Form f1("f1", 160, 160);
         std::cout << f1 << std::endl;
     }
     catch(const std::exception& e)
@@ -29,7 +29,7 @@ int main(void)
     std::cout << "Test Form with -1 grade" << std::endl;
     try
     {
-        Form f2("f2", -1, -1, false);
+        Form f2("f2", -1, -1);
         std::cout << f2 << std::endl;
     }
     catch(const std::exception& e)
@@ -42,7 +42,7 @@ int main(void)
     {
         Bureaucrat b1("b1", 150);
         std::cout << b1 << std::endl;
-        Form f3("f3", 150, 150, false);
+        Form f3("f3", 150, 150);
         std::cout << f3 << std::endl;
         b1.signForm(f3);
         std::cout << f3 << std::endl;
@@ -55,7 +55,7 @@ int main(void)
     std::cout << std::endl << std::endl << "Test make bureaucrat sign form with too low grade" << std::endl;
     Bureaucrat b2("b2", 50);
     std::cout << b2 << std::endl;
-    Form f4("f4", 100, 100, false);
+    Form f4("f4", 100, 100);
     std::cout << f4 << std::endl;
     try
     {

@@ -6,18 +6,18 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:58:35 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 15:31:48 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/24 17:52:04 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Aform("RobotomyRequestForm", 72, 45, false), target("default")
+RobotomyRequestForm::RobotomyRequestForm() : Aform("RobotomyRequestForm", 72, 45), target("default")
 {
     std::cout << "RobotomyRequestForm default constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Aform("RobotomyRequestForm", 72, 45, false), target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Aform("RobotomyRequestForm", 72, 45), target(target)
 {
     std::cout << "RobotomyRequestForm target constructor called" << std::endl;
 }

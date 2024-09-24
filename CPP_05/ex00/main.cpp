@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:20:46 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 11:30:44 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/24 13:42:07 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
     std::cout << std::endl << "Test Bureaucrat with -1 grade" << std::endl;
@@ -35,7 +35,7 @@ int main(void)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
     std::cout << std::endl << "Test Bureaucrat with 150 grade" << std::endl;
@@ -49,7 +49,7 @@ int main(void)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
     std::cout << std::endl << "Test Bureaucrat with 0 grade" << std::endl;
@@ -63,7 +63,7 @@ int main(void)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
     std::cout << std::endl << "Test Bureaucrat with 120 grade" << std::endl;
@@ -80,7 +80,7 @@ int main(void)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 10:06:19 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/25 10:40:33 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/25 15:43:57 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <iostream>
 # include <cstdlib>
+# include <limits>
 
 class ScalarConverter
 {

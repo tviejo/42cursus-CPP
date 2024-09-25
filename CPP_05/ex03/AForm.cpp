@@ -21,20 +21,20 @@ Aform::Aform() : name("default"), sign_grade(0), exec_grade(0)
 
 Aform::Aform(int sign_grade, int exec_grade) : name("default"), sign_grade(sign_grade), exec_grade(exec_grade)
 {
-    if (sign_grade < 0 || exec_grade < 0)
-        throw Aform::GradeTooLowException();
-    else if (sign_grade > 150 || exec_grade > 150)
+    if (sign_grade < 1 || exec_grade < 1)
         throw Aform::GradeTooHighException();
+    else if (sign_grade > 150 || exec_grade > 150)
+        throw Aform::GradeTooLowException();
     this->is_signed = false;
     std::cout << "default Constructor Called" << std::endl;
 }
 
 Aform::Aform(std::string name, int sign_grade, int exec_grade) : name(name), sign_grade(sign_grade), exec_grade(exec_grade)
 {
-    if (sign_grade < 0 || exec_grade < 0)
-        throw Aform::GradeTooLowException();
-    else if (sign_grade > 150 || exec_grade > 150)
+    if (sign_grade < 1 || exec_grade < 1)
         throw Aform::GradeTooHighException();
+    else if (sign_grade > 150 || exec_grade > 150)
+        throw Aform::GradeTooLowException();
     this->is_signed = false;
     std::cout << "default Constructor Called" << std::endl;
 }
@@ -63,7 +63,7 @@ Aform::Aform(const Aform &copy) : name(copy.name), sign_grade(copy.sign_grade), 
 
 void Aform::beSigned(const Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getGrade() < this->sign_grade)
+    if (bureaucrat.getGrade() > this->sign_grade)
         throw Aform::GradeTooLowException();
     this->is_signed = true;
 }

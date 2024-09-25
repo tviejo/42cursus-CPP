@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:20:46 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 17:45:06 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/25 14:35:56 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@
 int main(void)
 {
     Intern SomeRandomIntern;
-    Bureaucrat  bureaucrat("bureaucrat", 145);
+    Bureaucrat  bureaucrat("bureaucrat", 1);
     Aform   *randomform1 = NULL;
     Aform   *randomform2 = NULL;
     Aform   *randomform3 = NULL;
     Aform   *randomform4 = NULL;
+    Aform   *randomform5 = NULL;
 
     std::cout << "\n\ntry robotomy request" << std::endl;
     try
@@ -74,9 +75,22 @@ int main(void)
         std::cerr << e.what() << '\n';
     }
 
+    std::cout << "\n\ntry empty form" << std::endl;
+    try
+    {
+        randomform1 = SomeRandomIntern.makeForm("", "Bender");
+        bureaucrat.signForm(*randomform1);
+        bureaucrat.executeForm(*randomform1);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
     std::cout << std::endl << std::endl;
     delete randomform1;
     delete randomform2;
     delete randomform3;
     delete randomform4;
+    delete randomform5;
 }

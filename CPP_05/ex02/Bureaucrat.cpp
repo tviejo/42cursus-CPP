@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 10:38:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 16:39:17 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/25 14:52:06 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@ Bureaucrat::Bureaucrat() : name("default"), grade(0)
 Bureaucrat::Bureaucrat(int grade) : name("default"), grade(grade)
 {
     if (grade > 150)
-        throw Bureaucrat::GradeTooHighException();
-    else if (grade < 0)
         throw Bureaucrat::GradeTooLowException();
+    else if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
     std::cout << "Bureaucrat grade constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
     if (grade > 150)
-        throw Bureaucrat::GradeTooHighException();
-    else if (grade < 0)
         throw Bureaucrat::GradeTooLowException();
+    else if (grade < 1)
+        throw Bureaucrat::GradeTooHighException();
     std::cout << "Bureaucrat grade and name constructor called" << std::endl;
 }
 
@@ -50,7 +50,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
     return (*this);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy)
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name(copy.name), grade(copy.grade)
 {
     std::cout << "Copy constructor Bureaucrat called" << std::endl;
     *this = copy;
@@ -58,18 +58,18 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy)
 
 void    Bureaucrat::decrement()
 {
-    if (grade < 1)
+    if (grade > 149)
         throw Bureaucrat::GradeTooLowException();
     else
-        grade--;
+        grade++;
 }
 
 void    Bureaucrat::increment()
 {
-    if (grade > 149)
+    if (grade < 2)
         throw Bureaucrat::GradeTooHighException();
     else
-        grade++;
+        grade--;
 }
 
 std::string Bureaucrat::getName() const

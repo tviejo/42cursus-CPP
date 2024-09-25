@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:58:35 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 17:52:14 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/25 14:33:00 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,14 @@ void    PrintAsciiTrees(std::ofstream &file)
     file << " /______   ______\\" << std::endl;
     file << "        |||" << std::endl;
     file << "        |||" << std::endl;
+    file << "~~~~~~~~~~~~~~~~~~~~" << std::endl << std::endl ;
 }
 
 void    ShrubberyCreationForm::execute(Bureaucrat &Bureaucrat) const
 {
     if (!this->get_is_signed())
         throw Aform::FormNotSignedException();
-    if (Bureaucrat.getGrade() < this->get_exec_grade() || Bureaucrat.getGrade() < this->get_sign_grade())
+    if (Bureaucrat.getGrade() > this->get_exec_grade() || Bureaucrat.getGrade() > this->get_sign_grade())
         throw Aform::GradeTooLowException();
     std::ofstream file((this->target + "_shrubbery").c_str());
     for (int i = 0; i < 3; i++)

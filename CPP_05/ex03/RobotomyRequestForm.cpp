@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:58:35 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 17:52:04 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/25 14:31:08 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void    RobotomyRequestForm::execute(Bureaucrat &Bureaucrat) const
 {
     if (!this->get_is_signed())
         throw Aform::FormNotSignedException();
-    if (Bureaucrat.getGrade() < this->get_exec_grade() || Bureaucrat.getGrade() < this->get_sign_grade())
+    if (Bureaucrat.getGrade() > this->get_exec_grade() || Bureaucrat.getGrade() > this->get_sign_grade())
         throw Aform::GradeTooLowException();
     std::cout << "drilling noises" << std::endl;
     srand(time(NULL));

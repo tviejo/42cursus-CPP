@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:44:10 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/24 17:53:12 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/25 14:47:12 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@ Form::Form() : name("default"), sign_grade(0), exec_grade(0)
 
 Form::Form(int sign_grade, int exec_grade) : name("default"), sign_grade(sign_grade), exec_grade(exec_grade)
 {
-    if (sign_grade < 0 || exec_grade < 0)
-        throw Form::GradeTooLowException();
-    else if (sign_grade > 150 || exec_grade > 150)
+    if (sign_grade < 1 || exec_grade < 1)
         throw Form::GradeTooHighException();
+    else if (sign_grade > 150 || exec_grade > 150)
+        throw Form::GradeTooLowException();
     this->is_signed = false;
     std::cout << "default Constructor Called" << std::endl;
 }
 
 Form::Form(std::string name, int sign_grade, int exec_grade) : name(name), sign_grade(sign_grade), exec_grade(exec_grade)
 {
-    if (sign_grade < 0 || exec_grade < 0)
-        throw Form::GradeTooLowException();
-    else if (sign_grade > 150 || exec_grade > 150)
+    if (sign_grade < 1 || exec_grade < 1)
         throw Form::GradeTooHighException();
+    else if (sign_grade > 150 || exec_grade > 150)
+        throw Form::GradeTooLowException();
     this->is_signed = false;
     std::cout << "default Constructor Called" << std::endl;
 }
@@ -63,7 +63,7 @@ Form::Form(const Form &copy) : name(copy.name), sign_grade(copy.sign_grade), exe
 
 void Form::beSigned(Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getGrade() < this->sign_grade)
+    if (bureaucrat.getGrade() > this->sign_grade)
         throw Form::GradeTooLowException();
     this->is_signed = true;
 }

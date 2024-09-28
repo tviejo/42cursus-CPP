@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 10:06:25 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/25 15:58:17 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/28 17:57:04 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScalarConverter::~ScalarConverter()
 
 ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy)
 {
-    std::cout << "Copy assignment operator Aform called" << std::endl;
+    std::cout << "Copy assignment operator ScalarConverter called" << std::endl;
     if (this != &copy)
     {
     }
@@ -33,7 +33,7 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy)
 
 ScalarConverter::ScalarConverter(const ScalarConverter &copy)
 {
-    std::cout << "Copy constructor Aform called" << std::endl;
+    std::cout << "Copy constructor ScalarConverter called" << std::endl;
     *this = copy;
 }
 

@@ -1,0 +1,71 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.ttp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/29 18:41:01 by tviejo            #+#    #+#             */
+/*   Updated: 2024/09/29 19:18:13 by tviejo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Array.hpp"
+
+template <typename T>
+Array<T>::Array(void) : array(NULL), _size(0)
+{
+    return ;
+}
+
+template <typename T>
+Array<T>::Array(unsigned int n) : _size(n)
+{
+    if (n == 0)
+        this->array = NULL;
+    else
+        this->array = new T[n];
+    return ;
+}
+
+template <typename T>
+Array<T>::Array(Array const &copy) : _size(copy._size)
+{
+    this->array = new T[this->_size];
+    for (unsigned int i = 0; i < this->_size; i++)
+        this->array[i] = copy.array[i];
+    return ;
+}
+
+template <typename T>
+Array<T> &Array<T>::operator=(Array const &copy)
+{
+    if (this != &copy)
+    {
+        this->array = new T[this->_size];
+        for (unsigned int i = 0; i < this->_size; i++)
+            this->array[i] = copy.array[i];
+    }
+    return *this;
+}
+
+template <typename T>
+Array<T>::~Array(void)
+{
+    delete[] this->array;
+    return ;
+}
+
+template <typename T>
+T &Array<T>::operator[](unsigned int index)
+{
+    if (index >= this->_size)
+        throw std::out_of_range("Index out of range");
+    return this->array[index];
+}
+
+template <typename T>
+unsigned int Array<T>::size(void) const
+{
+    return this->_size;
+}

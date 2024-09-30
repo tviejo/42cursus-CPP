@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 11:20:46 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/25 14:42:14 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/30 11:18:37 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,21 @@ int main(void)
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl; 
+    }
+
+    std::cout << std::endl << std::endl << "Test make form besigned" << std::endl;\
+    try
+    {
+        Bureaucrat b1("b1", 100);
+        std::cout << b1 << std::endl;
+        Form f3("f3", 140, 140);
+        std::cout << f3 << std::endl;
+        f3.beSigned(b1);
+        std::cout << f3 << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
     }
 
     std::cout << std::endl << std::endl << "Test make bureaucrat sign form with too low grade" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:13:31 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/28 19:02:31 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/09/30 16:12:00 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ Base *generate(void)
 
 void    identify(Base* localBase)
 {
-    if (dynamic_cast<A*>(localBase))
+    if (dynamic_cast<A*>(localBase) != NULL)
         std::cout << "A" << std::endl;
-    else if (dynamic_cast<B*>(localBase))
+    else if (dynamic_cast<B*>(localBase) != NULL)
         std::cout << "B" << std::endl;
-    else if (dynamic_cast<C*>(localBase))
+    else if (dynamic_cast<C*>(localBase) != NULL)
         std::cout << "C" << std::endl;
 }
 

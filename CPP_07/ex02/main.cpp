@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 18:51:20 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/29 19:19:33 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/01 11:01:00 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,8 @@ int main(void)
 
     std::cout << "\n\ncreate size 0 array" << std::endl;
     Array<int> emptyArray;
-    std::cout << "emptyArray size: " << emptyArray.size() << std::endl;
 
-    // std::cout << "\n\ncreate array with negative size" << std::endl;
-    // try
-    // {
-    //     Array<int> negativeArray(-1);
-    // }
-    // catch (std::exception &e)
-    // {
-    //     std::cout << "caught exception: " << e.what() << std::endl;
-    // }
-
-    std::cout << "\n\ncreate array with size 0 and try to access index 0" << std::endl;
+    std::cout << "\n\ntry to access index 0" << std::endl;
     try
     {
         emptyArray[0] = 42;
@@ -91,5 +80,28 @@ int main(void)
         for (unsigned int i = 0; i < assignArray.size(); i++)
             std::cout << "assignArray[" << i << "] = " << assignArray[i] << std::endl;
     }
+
+    std::cout << "\n\ntest with complex type" << std::endl;
+    {
+        Array<std::string> complexArray(2);
+        complexArray[0] = "hello";
+        complexArray[1] = "world";
+        for (unsigned int i = 0; i < complexArray.size(); i++)
+            std::cout << "complexArray[" << i << "] = " << complexArray[i] << std::endl;
+    }
+
+    std::cout << "\n\ntest with complex type: Data" << std::endl;
+    {
+        Array<Data> dataArray(2);
+        dataArray[0].s1 = "hello";
+        dataArray[0].s2 = "world";
+        dataArray[0].n = 42;
+        dataArray[1].s1 = "I am";
+        dataArray[1].s2 = "tviejo";
+        dataArray[1].n = 23;
+        for (unsigned int i = 0; i < dataArray.size(); i++)
+            std::cout << "dataArray[" << i << "] = " << dataArray[i].s1 << ", " << dataArray[i].s2 << ", " << dataArray[i].n << std::endl;
+    }
+
     return (0);
 }

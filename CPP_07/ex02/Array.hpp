@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 18:41:01 by tviejo            #+#    #+#             */
-/*   Updated: 2024/09/29 18:57:45 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/01 10:59:30 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define ARRAY_HPP
 
 # include <iostream>
+
+typedef struct s_data
+{
+    std::string s1;
+    std::string s2;
+    int n;
+}               Data;
 
 template <typename T>
 class Array

@@ -1,7 +1,7 @@
-NAME		=   RPN
+NAME		=   Sort
 
 SRCS	    =   main.cpp
-SRCS	    +=  RPN.cpp
+SRCS	    +=  PmergeMe.cpp
 
 OBJ_DIR     = objs/
 

@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:45:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/10/02 18:21:43 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/02 22:28:13 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,16 +114,8 @@ ParsedLine BitcoinExchange::parseLine(std::string line)
 
 float   BitcoinExchange::getPrice(ParsedLine line)
 {
-    for (std::multimap<int, double>::iterator it = this->_history.begin(); it != this->_history.end(); it++)
-    {
-        if (it->first > line.date_int)
-        {
-            std::multimap<int, double>::iterator it2 = it;
-            it2--;
-            return (it2->second);
-        }
-    }
-    return (-1);
+    std::multimap<int, double>::iterator it = this->_history.lower_bound(line.date_int);
+    return (it->second);
 }
 
 void BitcoinExchange::printDate(ParsedLine line)

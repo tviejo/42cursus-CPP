@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:12:34 by tviejo            #+#    #+#             */
-/*   Updated: 2024/10/02 22:19:24 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/02 23:08:03 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@
 # include <vector>
 # include <deque>
 # include <algorithm>
+
+# define SHOWDEBUG 0
+
+# define RED "\033[31m"
+# define GREEN "\033[32m"
+# define YELLOW "\033[33m"
+# define BLUE "\033[34m"
+# define END "\033[0m"
 
 class PmergeMe
 {

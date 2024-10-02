@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 21:51:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/10/02 22:19:19 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/02 23:08:53 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,94 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &src)
     return (*this);
 }
 
+void printminimamaximavector(std::vector<int> &minima, std::vector<int> &maxima)
+{
+    if (SHOWDEBUG == 0)
+        return;
+    std::cout << YELLOW << "minima: ";
+    for (std::vector<int>::const_iterator it = minima.begin(); it != minima.end(); ++it)
+    {
+        const int& num = *it;
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "maxima: ";
+    for (std::vector<int>::const_iterator it = maxima.begin(); it != maxima.end(); ++it)
+    {
+        const int& num = *it;
+        std::cout << num << " ";
+    }
+    std::cout << END << std::endl;
+}
+
+void printsortedminimavector(std::vector<int> &sortedMinima)
+{
+    if (SHOWDEBUG == 0)
+        return;
+    std::cout << RED << "sorted minima: ";
+    for (std::vector<int>::const_iterator it = sortedMinima.begin(); it != sortedMinima.end(); ++it)
+    {
+        const int& num = *it;
+        std::cout << num << " ";
+    }
+    std::cout << END << std::endl;
+}
+
+void printminimamaximadeque(std::deque<int> &minima, std::deque<int> &maxima)
+{
+    if (SHOWDEBUG == 0)
+        return;
+    std::cout << YELLOW << "minima: ";
+    for (std::deque<int>::const_iterator it = minima.begin(); it != minima.end(); ++it)
+    {
+        const int& num = *it;
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "maxima: ";
+    for (std::deque<int>::const_iterator it = maxima.begin(); it != maxima.end(); ++it)
+    {
+        const int& num = *it;
+        std::cout << num << " ";
+    }
+    std::cout << END << std::endl;
+}
+
+void printsortedminimadeque(std::deque<int> &sortedMinima)
+{
+    if (SHOWDEBUG == 0)
+        return;
+    std::cout << RED << "sorted minima: ";
+    for (std::deque<int>::const_iterator it = sortedMinima.begin(); it != sortedMinima.end(); ++it)
+    {
+        const int& num = *it;
+        std::cout << num << " ";
+    }
+    std::cout << END << std::endl;
+}
+
+void PmergeMe::displayVector(const std::vector<int>& vec)
+{
+    std::cout << GREEN << "vector sorted: ";
+    for (std::vector<int>::const_iterator it = vec.begin(); it != vec.end(); ++it)
+    {
+        const int& num = *it;
+        std::cout << num << " ";
+    }
+    std::cout << END << std::endl;
+}
+
+void PmergeMe::displayDeque(const std::deque<int>& deq)
+{
+    std::cout << GREEN << "deque sorted: ";
+    for (std::deque<int>::const_iterator it = deq.begin(); it != deq.end(); ++it)
+    {
+        const int& num = *it;
+        std::cout << num << " ";
+    }
+    std::cout << END << std::endl;
+}
+
 void findMinMaxPairsVectors(const std::vector<int>& data, std::vector<int>& minima, std::vector<int>& maxima)
 {
     size_t i = 0;
@@ -54,9 +142,10 @@ void findMinMaxPairsVectors(const std::vector<int>& data, std::vector<int>& mini
     }
     if (i < n)
         minima.push_back(data[i]);
+    printminimamaximavector(minima, maxima);
 }
 
-void findMinMaxPairsDeques(const std::deque<int>& data, std::vector<int>& minima, std::vector<int>& maxima)
+void findMinMaxPairsDeques(const std::deque<int>& data, std::deque<int>& minima, std::deque<int>& maxima)
 {
     size_t i = 0;
     size_t n = data.size();
@@ -77,6 +166,7 @@ void findMinMaxPairsDeques(const std::deque<int>& data, std::vector<int>& minima
     }
     if (i < n)
         minima.push_back(data[i]);
+    printminimamaximadeque(minima, maxima);
 }
 
 void binaryInsertVector(std::vector<int>& sortedData, int element)
@@ -143,8 +233,8 @@ std::vector<int> PmergeMe::fordJhonsonVectorSort(std::vector<int>& data)
     {
         const int& maxElement = *it;
         binaryInsertVector(sortedMinima, maxElement);
+        printsortedminimavector(sortedMinima);
     }
-
     return sortedMinima;
 }
 
@@ -152,35 +242,15 @@ std::deque<int> PmergeMe::fordJhonsonDequeSort(std::deque<int>& data)
 {
     if (data.size() <= 1)
         return data;
-    std::vector<int> minima;
-    std::vector<int> maxima;
+    std::deque<int> minima;
+    std::deque<int> maxima;
     findMinMaxPairsDeques(data, minima, maxima);
-    std::vector<int> sortedMinima = fordJhonsonVectorSort(minima);
-    for (std::vector<int>::const_iterator it = maxima.begin(); it != maxima.end(); ++it)
+    std::deque<int> sortedMinima = fordJhonsonDequeSort(minima);
+    for (std::deque<int>::const_iterator it = maxima.begin(); it != maxima.end(); ++it)
     {
         const int& maxElement = *it;
-        binaryInsertVector(sortedMinima, maxElement);
+        binaryInsertDeque(sortedMinima, maxElement);
+        printsortedminimadeque(sortedMinima);
     }
     return std::deque<int>(sortedMinima.begin(), sortedMinima.end());
-}
-
-
-void PmergeMe::displayVector(const std::vector<int>& vec)
-{
-    for (std::vector<int>::const_iterator it = vec.begin(); it != vec.end(); ++it)
-    {
-        const int& num = *it;
-        std::cout << num << " ";
-    }
-    std::cout << std::endl;
-}
-
-void PmergeMe::displayDeque(const std::deque<int>& deq)
-{
-    for (std::deque<int>::const_iterator it = deq.begin(); it != deq.end(); ++it)
-    {
-        const int& num = *it;
-        std::cout << num << " ";
-    }
-    std::cout << std::endl;
 }

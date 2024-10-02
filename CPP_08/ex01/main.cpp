@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:06:04 by tviejo            #+#    #+#             */
-/*   Updated: 2024/10/01 13:29:59 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/02 11:08:06 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ int main(void)
     sp.addNumber(11);
     std::cout << sp.shortestSpan() << std::endl;
     std::cout << sp.longestSpan() << std::endl;
+
+    std::cout << "\n\ntest 1000000 numbers" << std::endl;
+    {
+        Span sp1 = Span(1000000);
+        for (int i = 0; i < 1000000; i++)
+            sp1.addNumber(i);
+        std::cout << "result of 1000000 numbers test: "<< sp1.longestSpan() << std::endl;
+    }
 
     std::cout << "\n\ntest deep copy assignator" << std::endl;
     {

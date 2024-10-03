@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 21:51:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/10/03 22:08:28 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/03 22:43:02 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,10 +164,18 @@ void findMinMaxPairsVectors(const std::vector<int>& data, std::vector<int>& mini
     printminimamaximavector(minima, maxima);
 }
 
-void BinaryInsertVector(std::vector<int>& sortedData, int element)
+void BinaryInsertVector(std::vector<int>& sortedData, int element, int low, int high)
 {
-    std::vector<int>::iterator it = std::lower_bound(sortedData.begin(), sortedData.end(), element);
-    sortedData.insert(it, element);
+    if (low >= high)
+    {
+        sortedData.insert(sortedData.begin() + low, element);
+        return;
+    }
+    int mid = (low + high) / 2;
+    if (element < sortedData[mid])
+        BinaryInsertVector(sortedData, element, low, mid - 1);
+    else
+        BinaryInsertVector(sortedData, element, mid + 1, high);
 }
 
 void insertMaximatoSortedMinimaVector(std::vector<int>& sortedMinima, std::vector<int>& maxima)
@@ -175,7 +183,7 @@ void insertMaximatoSortedMinimaVector(std::vector<int>& sortedMinima, std::vecto
     for (std::vector<int>::const_iterator it = maxima.begin(); it != maxima.end(); ++it)
     {
         const int& maxElement = *it;
-        BinaryInsertVector(sortedMinima, maxElement);
+        BinaryInsertVector(sortedMinima, maxElement, 0, sortedMinima.size());
         printsortedminimavector(sortedMinima);
     }
 }
@@ -219,10 +227,18 @@ void findMinMaxPairsDeques(const std::deque<int>& data, std::deque<int>& minima,
     printminimamaximadeque(minima, maxima);
 }
 
-void BinaryInsertDeque(std::deque<int>& sortedData, int element)
+void BinaryInsertDeque(std::deque<int>& sortedData, int element, int low, int high)
 {
-    std::deque<int>::iterator it = std::lower_bound(sortedData.begin(), sortedData.end(), element);
-    sortedData.insert(it, element);
+    if (low >= high)
+    {
+        sortedData.insert(sortedData.begin() + low, element);
+        return;
+    }
+    int mid = (low + high) / 2;
+    if (element < sortedData[mid])
+        BinaryInsertDeque(sortedData, element, low, mid - 1);
+    else
+        BinaryInsertDeque(sortedData, element, mid + 1, high);
 }
 
 void    insertMaximatoSortedMinimaDeque(std::deque<int>& sortedMinima, std::deque<int>& maxima)
@@ -230,7 +246,7 @@ void    insertMaximatoSortedMinimaDeque(std::deque<int>& sortedMinima, std::dequ
     for (std::deque<int>::const_iterator it = maxima.begin(); it != maxima.end(); ++it)
     {
         const int& maxElement = *it;
-        BinaryInsertDeque(sortedMinima, maxElement);
+        BinaryInsertDeque(sortedMinima, maxElement, 0, sortedMinima.size());
         printsortedminimadeque(sortedMinima);
     }
 }
@@ -246,5 +262,4 @@ std::deque<int> PmergeMe::fordJhonsonDequeSort(std::deque<int>& data)
     insertMaximatoSortedMinimaDeque(sortedMinima, maxima);
     return std::deque<int>(sortedMinima.begin(), sortedMinima.end());
 }
-
 

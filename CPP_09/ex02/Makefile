@@ -2,6 +2,7 @@ NAME		=   Sort
 
 SRCS	    =   main.cpp
 SRCS	    +=  PmergeMe.cpp
+SRCS	    +=  Timer.cpp
 
 OBJ_DIR     = objs/
 

@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:12:34 by tviejo            #+#    #+#             */
-/*   Updated: 2024/10/02 23:08:03 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/03 22:16:34 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define GREEN "\033[32m"
 # define YELLOW "\033[33m"
 # define BLUE "\033[34m"
+# define WHITE "\033[37m"
 # define END "\033[0m"
 
 class PmergeMe
@@ -35,8 +36,9 @@ class PmergeMe
     public:
         static std::vector<int> fordJhonsonVectorSort(std::vector<int> &vector);
         static std::deque<int> fordJhonsonDequeSort(std::deque<int> &deque);
-        static void displayVector(const std::vector<int> &vector);
-        static void displayDeque(const std::deque<int> &deque);
+        static bool isSortable(const std::vector<int> vector);
+        static void displayVector(const std::vector<int> &vector, std::string color);
+        static void displayDeque(const std::deque<int> &deque, std::string color);
     private:
         PmergeMe(void);
         ~PmergeMe(void);

@@ -10,7 +10,7 @@ OBJS		=	$(patsubst %.cpp, $(OBJ_DIR)%.o, $(SRCS))
 
 CC			= c++
 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g3
+CFLAGS		= -O3 -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

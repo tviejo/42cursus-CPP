@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 21:54:33 by tviejo            #+#    #+#             */
-/*   Updated: 2024/10/03 18:21:57 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/04 11:32:50 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,33 +34,39 @@ int main(int argc, char **argv)
         return (1);
     }
     int i = 1;
-    std::cout << "before: " ;
+    if (DELETEALLPRINTS == 0)
+        std::cout << "before:        " ;
     while (i < argc)
     {
-        std::cout << atoi(argv[i]) << " ";
+        if (DELETEALLPRINTS == 0)
+            std::cout << atoi(argv[i]) << " ";
         vector.push_back(atoi(argv[i]));
         mainvector.push_back(atoi(argv[i]));
         deque.push_back(atoi(argv[i]));
         i++;
     }
-    std::cout << std::endl << "after:  ";
+    if (DELETEALLPRINTS == 0)
+        std::cout << std::endl << "after:         ";
     if (!PmergeMe::isSortable(vector))
         return (1);
     Timer vectorTimer, dequeTimer, mainTimer;
     mainTimer.startTimer();
     sort(mainvector.begin(), mainvector.end());
     mainTimer.stopTimer();
-    displayvector(mainvector);
+    if (DELETEALLPRINTS == 0)
+        displayvector(mainvector);
     vectorTimer.startTimer();
     vector = PmergeMe::fordJhonsonVectorSort(vector);
     vectorTimer.stopTimer();
-    PmergeMe::displayVector(vector, GREEN);
+    if (DELETEALLPRINTS == 0)
+        PmergeMe::displayVector(vector, GREEN);
     dequeTimer.startTimer();
     deque = PmergeMe::fordJhonsonDequeSort(deque);
     dequeTimer.stopTimer();
-    PmergeMe::displayDeque(deque, GREEN);
-    std::cout << "time to proccess a range of " << vector.size() << " elements with vector: " << vectorTimer.getElapsedTimeMicroseconds() << " us" << std::endl;
-    std::cout << "time to proccess a range of " << deque.size() << " elements with deque: " << dequeTimer.getElapsedTimeMicroseconds() << " us" << std::endl;
+    if (DELETEALLPRINTS == 0)
+        PmergeMe::displayDeque(deque, GREEN);
+    std::cout << "time to proccess a range of " << vector.size() << " elements with vector:        " << vectorTimer.getElapsedTimeMicroseconds() << " us" << std::endl;
+    std::cout << "time to proccess a range of " << deque.size() << " elements with deque:         " << dequeTimer.getElapsedTimeMicroseconds() << " us" << std::endl;
     std::cout << "time to proccess a range of " << mainvector.size() << " elements with sort function: " << mainTimer.getElapsedTimeMicroseconds() << " us" << std::endl;
 
     return (0);

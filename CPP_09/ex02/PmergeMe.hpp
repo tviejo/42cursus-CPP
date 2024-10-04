@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:12:34 by tviejo            #+#    #+#             */
-/*   Updated: 2024/10/03 22:39:53 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/04 11:35:48 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <algorithm>
 
 # define SHOWDEBUG 0
+# define DELETEALLPRINTS 0
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"

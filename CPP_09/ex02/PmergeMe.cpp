@@ -6,7 +6,7 @@
 /*   By: tviejo <tviejo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 21:51:47 by tviejo            #+#    #+#             */
-/*   Updated: 2024/10/03 22:43:02 by tviejo           ###   ########.fr       */
+/*   Updated: 2024/10/04 10:41:42 by tviejo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void PmergeMe::displayVector(const std::vector<int>& vec, std::string color)
 
 void PmergeMe::displayDeque(const std::deque<int>& deq, std::string color)
 {
-    std::cout << color << "deque sorted: ";
+    std::cout << color << "deque sorted:  ";
     for (std::deque<int>::const_iterator it = deq.begin(); it != deq.end(); ++it)
     {
         const int& num = *it;
@@ -173,7 +173,7 @@ void BinaryInsertVector(std::vector<int>& sortedData, int element, int low, int 
     }
     int mid = (low + high) / 2;
     if (element < sortedData[mid])
-        BinaryInsertVector(sortedData, element, low, mid - 1);
+        BinaryInsertVector(sortedData, element, low, mid);
     else
         BinaryInsertVector(sortedData, element, mid + 1, high);
 }
@@ -236,7 +236,7 @@ void BinaryInsertDeque(std::deque<int>& sortedData, int element, int low, int hi
     }
     int mid = (low + high) / 2;
     if (element < sortedData[mid])
-        BinaryInsertDeque(sortedData, element, low, mid - 1);
+        BinaryInsertDeque(sortedData, element, low, mid);
     else
         BinaryInsertDeque(sortedData, element, mid + 1, high);
 }
